@@ -1,0 +1,132 @@
+@charset "UTF-8";
+.newsSt {
+    display:inline-block;   
+    position:relative;
+}
+.containerNewsSt{ 
+    display: inline-block; 
+    position: absolute; 
+    bottom: 15px; left: 0px; 
+    background-color: rgba(0,0,0,.4); 
+    padding: 5px 5px 5px 10px;
+    color: white
+}
+.hint {
+	margin: 1px;
+	font-size: 20px;
+	color: #A9A9A9;
+}
+.text {
+	text-align: center;
+	margin: 10px;
+	font-size: 50px;
+	color: white;
+}
+.field{
+	width: 150px;
+	font-size: 13px;
+	padding: 6px 0 4px 10px;
+	border: 1px solid #cecece;
+	background: #F6F6f6;
+	border-radius: 8px;
+}
+.btn {
+	font-size: 30px;
+	font-family: Tahoma;
+	color: white;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden; 
+   }
+   .menu_place{
+	display: flex;
+	justify-content:space-around;
+	width:100%;
+    text-align: center;
+}
+.button_Menu{
+	
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	background: #324AB2;
+	color: white;
+	height: 30px;
+	font-size: 15px;
+	cursor: pointer;
+}
+.button_logout{
+	margin: 5px;
+	background: #324AB2;
+	color: white;
+	height: 30px;
+	border-radius: 15px;
+	font-size: 15px;
+	cursor: pointer;
+}
+.text_user {
+	text-align: center;
+	margin: 10px;
+	font-size: 20px;
+	color: white;
+}
+.text_news{
+	text-align: center;
+	margin: 10px;
+	font-size: 50px;
+	color: white;
+}
+.button_profile{
+	margin: 5px;
+	background: #324AB2;
+	color: white;
+	height: 30px;
+	border-radius: 15px;
+	font-size: 15px;
+	cursor: pointer;
+}
+.div_table{
+	margin-top: 20px;
+	width: 100%;
+}
+caption {
+ 
+  font-size: 2em;
+  padding: 10px; 
+  color: #F4F3F3;
+  text-shadow: 1px 1px 0 rgba(0,0,0,.3);
+ }
+table {
+	margin: 0 auto;
+font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size: 14px;
+border-collapse: collapse;
+text-align: center;
+}
+th {
+background: #A09C9C;
+color: white;
+padding: 10px 20px;
+}
+th, td {
+border-style: solid;
+border-width: 0 1px 1px 0;
+border-color: white;
+}
+tr:nth-child(even) {
+	background: #F4F3F3;
+}
+tr:nth-child(odd) {
+	background:#D3D3D3;
+	}
+.button_view{
+	margin: 5px;
+	background: #324AB2;
+	color: white;
+	height: 30px;
+	border-radius: 15px;
+	font-size: 18px;
+	cursor: pointer;
+}

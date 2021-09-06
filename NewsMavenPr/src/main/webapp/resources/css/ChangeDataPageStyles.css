@@ -1,0 +1,91 @@
+@charset "UTF-8";
+.button_logout{
+	margin: 5px;
+	background: #324AB2;
+	color: white;
+	height: 30px;
+	border-radius: 15px;
+	font-size: 15px;
+	cursor: pointer;
+}
+.text_user {
+	text-align: center;
+	margin: 10px;
+	font-size: 20px;
+	color: white;
+}
+.text_news{
+	text-align: center;
+	margin: 10px;
+	font-size: 50px;
+	color: white;
+}
+.button_profile{
+	margin: 5px;
+	background: #324AB2;
+	color: white;
+	height: 30px;
+	border-radius: 15px;
+	font-size: 15px;
+	cursor: pointer;
+}
+ .button_create_news{
+	margin: 5px;
+	background: #324AB2;
+	color: white;
+	height: 30px;
+	border-radius: 15px;
+	font-size: 15px;
+	cursor: pointer;
+}
+.text_change {
+	margin: auto;
+	text-align: center;
+	margin: 0px;
+	font-size: 50px;
+	color: white;
+}
+.menu_place{
+	display: flex;
+	justify-content:space-around;
+	width:100%;
+    text-align: center;
+}
+.button_Menu{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	background: #324AB2;
+	color: white;
+	height: 30px;
+	font-size: 15px;
+	cursor: pointer;
+}
+.form input {
+	font-family: "Roboto", sans-serif;
+	outline: 0;
+	background: #f2f2f2;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+
+.form {
+	position: relative;
+	z-index: 1;
+	background: #FFFFFF;
+	max-width: 360px;
+	margin: 0 auto 100px;
+	padding: 45px;
+	text-align: center;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0
+		rgba(0, 0, 0, 0.24);
+}
+.form p {
+	color: grey;
+	margin: 0px 0px 10px 0px;
+	font-size: 12px;
+}

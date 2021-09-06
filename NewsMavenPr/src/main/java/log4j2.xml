@@ -1,0 +1,40 @@
+<configuration>
+  <Properties>
+    <Property name="filename">c:/Users/alexa/git/News/NewsMavenPr/src/main/java/resources/logs/output.log</Property>
+    <Property name="basePatterLayout">%d{ISO8601} [%-5p] %l -  %m%n</Property>
+  </Properties>
+  <appenders>
+    <Console name="STDOUT" target="SYSTEM_OUT">
+      <PatternLayout pattern="${basePatterLayout}" />
+    </Console>
+     <RollingFile name="File" fileName="${filename}" filePattern="logs/app-%d{MM-dd-yyyy}.log.gz" immediateFlush="true">
+             <PatternLayout pattern="${basePatterLayout}" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB" />
+            </Policies>
+        </RollingFile>
+  </appenders>
+  <loggers>
+    <logger name="by.myproject.news.dao.impl.SQLNewsDAO" level="info" additivity="false">
+      <appender-ref ref="STDOUT"/>
+      <appender-ref ref="File"/>
+    </logger>
+    <logger name="by.myproject.news.dao.impl.SQLUserDAO" level="info" additivity="false">
+      <appender-ref ref="STDOUT"/>
+       <appender-ref ref="File"/>
+    </logger>
+    <logger name="by.myproject.news.dao.impl.SQLCommentDAO" level="info" additivity="false">
+      <appender-ref ref="STDOUT"/>
+       <appender-ref ref="File"/>
+    </logger>
+    <logger name="by.myproject.news.dao.impl.CreatConPoolListener" level="info" additivity="false">
+      <appender-ref ref="STDOUT"/>
+       <appender-ref ref="File"/>
+    </logger>
+    <root level="warn">
+      <appender-ref ref="STDOUT"/>
+       <appender-ref ref="File"/>
+    </root>
+  </loggers>
+</configuration>

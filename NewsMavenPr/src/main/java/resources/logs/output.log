@@ -1,0 +1,47 @@
+2021-09-05T21:36:16,912 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:37:31,944 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:40:08,249 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:40:17,793 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:40:26,476 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:40:30,587 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:40:31,293 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:40:34,329 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:40:35,536 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:40:36,033 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:43:07,759 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:43:17,912 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:46:10,314 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:46:40,353 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:46:46,698 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:46:49,043 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:47:00,122 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:47:02,786 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:47:29,290 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:47:31,228 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:47:36,329 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:48:00,141 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:48:01,441 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:48:03,864 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:48:20,034 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:48:21,436 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:48:26,209 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:48:50,539 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:48:52,600 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:48:53,970 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:49:01,368 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.delete(SQLNewsDAO.java:167) -  com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`news_site`.`comments`, CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`id_News`) REFERENCES `news` (`id_News`))
+2021-09-05T21:52:31,225 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:52:42,520 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:52:47,458 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:52:51,706 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:52:54,908 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:52:57,221 [ERROR] by.myproject.news.dao.impl.SQLCommentDAO.getComments(SQLCommentDAO.java:85) -  java.sql.SQLException: Value '0000-00-00 00:00:00' can not be represented as java.sql.Timestamp
+2021-09-05T21:53:38,112 [ERROR] by.myproject.news.dao.impl.SQLCommentDAO.getComments(SQLCommentDAO.java:85) -  java.sql.SQLException: Value '0000-00-00 00:00:00' can not be represented as java.sql.Timestamp
+2021-09-05T21:54:31,872 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:54:35,495 [ERROR] by.myproject.news.dao.impl.SQLCommentDAO.getComments(SQLCommentDAO.java:85) -  java.sql.SQLException: Value '0000-00-00 00:00:00' can not be represented as java.sql.Timestamp
+2021-09-05T21:54:39,873 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:54:40,650 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:54:43,764 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:54:48,735 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.delete(SQLNewsDAO.java:167) -  com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`news_site`.`comments`, CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`id_News`) REFERENCES `news` (`id_News`))
+2021-09-05T21:55:18,481 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:55:35,958 [ERROR] by.myproject.news.dao.impl.SQLNewsDAO.getNewses(SQLNewsDAO.java:117) -  File
+2021-09-05T21:55:45,474 [ERROR] by.myproject.news.dao.impl.SQLCommentDAO.getComments(SQLCommentDAO.java:85) -  java.sql.SQLException: Value '0000-00-00 00:00:00' can not be represented as java.sql.Timestamp

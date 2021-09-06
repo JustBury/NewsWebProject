@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+.button_logout{
+	margin: 5px;
+	background: #324AB2;
+	color: white;
+	width: 80px;
+	height: 30px;
+	border-radius: 15px;
+	font-size: 15px;
+	cursor: pointer;
+}
+.text_user {
+	text-align: center;
+	margin: 10px;
+	font-size: 20px;
+	color: white;
+}
+.text_news{
+	text-align: center;
+	margin: 10px;
+	font-size: 50px;
+	color: white;
+}
+.button_profile{
+	margin: 5px;
+	background: #324AB2;
+	color: white;
+	width: 80px;
+	height: 30px;
+	border-radius: 15px;
+	font-size: 15px;
+	cursor: pointer;
+}
+.create_news_area{	
+	margin: auto;
+	background: #ACAAAA ;
+	width: 80%;
+	
+	border-radius: 20px;
+}
+.create_news_area_title{
+	margin: auto;
+	text-align: center;
+    width: 80%;
+	font-size: 30px;
+}
+.myCreate_news{
+	margin: auto;
+	text-align: center;
+	margin: 0px;
+	font-size: 50px;
+	color: white;
+}
+.input_creat_news {
+	
+	font-size: 20px;
+	padding: 6px 0 4px 10px;
+	border: 1px solid #cecece;
+	background: #F6F6f6;
+	border-radius: 8px;
+}
+.button_create_news{
+	margin: 5px;
+	background: #324AB2;
+	color: white;
+	height: 50px;
+	border-radius: 15px;
+	font-size: 15px;
+	cursor: pointer;
+}
+.menu_place{
+	display: flex;
+	justify-content:space-around;
+	width:100%;
+    text-align: center;
+}
+.button_Menu{
+	
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	background: #324AB2;
+	color: white;
+	height: 30px;
+	font-size: 15px;
+	cursor: pointer;
+}

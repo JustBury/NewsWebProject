@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.button_logout{
+	margin: 5px;
+	background: #324AB2;
+	color: white;
+	width: 80px;
+	height: 30px;
+	border-radius: 15px;
+	font-size: 15px;
+	cursor: pointer;
+}
+.text_user {
+	text-align: center;
+	margin: 10px;
+	font-size: 20px;
+	color: white;
+}
+
+.button_profile{
+	margin: 5px;
+	background: #324AB2;
+	color: white;
+	width: 80px;
+	height: 30px;
+	border-radius: 15px;
+	font-size: 15px;
+	cursor: pointer;
+}

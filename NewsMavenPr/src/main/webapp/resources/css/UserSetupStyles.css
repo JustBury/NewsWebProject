@@ -1,0 +1,88 @@
+@charset "utf-8";
+/* CSS Document */
+.text_user {
+	text-align: center;
+	margin: 10px;
+	font-size: 20px;
+	color: white;
+}
+.myProfile{
+	margin: auto;
+	text-align: center;
+	margin: 0px;
+	font-size: 50px;
+	color: white;
+}
+.profile{
+	margin: auto;
+	background: #ACAAAA ;
+	width: 80%;
+	height: 500px;
+	border-radius: 20px;
+}
+.button_logout{
+	margin: 5px;
+	background: #324AB2;
+	color: white;
+	height: 30px;
+	border-radius: 15px;
+	font-size: 15px;
+	cursor: pointer;
+}
+.button_change{
+	text-align: center;
+	background: #324AB2;
+	color: white;
+	width: 100px;
+	height: 30px;
+	border-radius: 15px;
+	font-size: 15px;
+	cursor: pointer;
+}
+ .button_create_news{
+	margin: 5px;
+	background: #324AB2;
+	color: white;
+	height: 30px;
+	border-radius: 15px;
+	font-size: 15px;
+	cursor: pointer;
+}
+	
+.text_profile {
+	text-align: center;
+	margin: 10px;
+	font-size: 20px;
+	color: black;
+}
+.input_form {
+	width: 300px;
+	font-size: 15px;
+	padding: 6px 0 4px 10px;
+	border: 1px solid #cecece;
+	background: #F6F6f6;
+	border-radius: 8px;
+}
+.text_data{
+	font-size: 20px;
+	color: white;
+}
+.menu_place{
+	display: flex;
+	justify-content:space-around;
+	width:100%;
+    text-align: center;
+}
+.button_Menu{
+	
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	background: #324AB2;
+	color: white;
+	height: 30px;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+	

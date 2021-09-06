@@ -1,0 +1,16 @@
+@charset "UTF-8";
+.heading {
+	border-bottom: 1px black solid;
+	margin: 10px;
+	margin-left: 0px;
+	margin-right: 0px;
+	height: 150px;
+	background-color: #87CEEB;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.heading-1 {
+	display:flex;  
+}
