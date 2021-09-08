@@ -32,7 +32,12 @@ public class SQLCommentDAO implements CommentDAO {
 	private static final String NAME_USER = "name";
 	private static final String DATE_PUBLICATION = "date_publication";
 	private static final String SURNAME_USER = "surname";
+	private static final String ID_COMMENT = "id_Comment";
 	private static final String MESSAGE_ADD_NEWS = "The news was successfully added";
+	private static final String MESSAGE_DELETE = "The comment was successfully deleted";	
+	private static final String DELETE_COMMENT = "DELETE FROM comments where id_Comment = ?;";
+	private static final String DELETE_ALL_COMMENT_BY_ID_NEWS = "DELETE FROM comments where id_News = ?;";
+	
 	
 	@Override
 	public String add(String comment, int idNews, int idUser) throws DAOException {
@@ -79,7 +84,9 @@ public class SQLCommentDAO implements CommentDAO {
 				user.setSurname(rs.getString(SURNAME_USER));
 				String commentContent = rs.getString(COMMENT_CONTENT);
 				String dateComment = rs.getString(DATE_PUBLICATION);
+				int idComment = rs.getInt(ID_COMMENT);
 				comment.setContent(commentContent);
+				comment.setIdComment(idComment);
 				comment.setDatePublication(dateComment);
 				comment.setAuthorComment(user);
 				comments.add(comment);
@@ -95,4 +102,34 @@ public class SQLCommentDAO implements CommentDAO {
 		}
 	}
 
+	@Override
+	public String deleteComment(int idComment) throws DAOException {
+		try (Connection con = connectionPool.takeConnection();
+				PreparedStatement ps = con.prepareStatement(DELETE_COMMENT);) {
+			ps.setInt(1, idComment);
+			ps.executeUpdate();
+			return MESSAGE_DELETE;
+		} catch (SQLException e) {
+			log.error(e);
+			throw new DAOException(e);
+		} catch (ConnectionPoolException e) {
+			log.error(e);
+			throw new DAOException(e);
+		}
+	}
+
+	@Override
+	public void deleteAllComments(int idNews) throws DAOException {
+		try (Connection con = connectionPool.takeConnection();
+				PreparedStatement ps = con.prepareStatement(DELETE_ALL_COMMENT_BY_ID_NEWS);) {
+			ps.setInt(1, idNews);
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			log.error(e);
+			throw new DAOException(e);
+		} catch (ConnectionPoolException e) {
+			log.error(e);
+			throw new DAOException(e);
+		}  		
+	}
 }

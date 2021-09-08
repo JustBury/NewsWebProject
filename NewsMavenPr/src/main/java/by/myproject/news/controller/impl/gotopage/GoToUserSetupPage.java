@@ -1,4 +1,4 @@
-package by.myproject.news.controller.impl;
+package by.myproject.news.controller.impl.gotopage;
 
 import java.io.IOException;
 
@@ -15,8 +15,7 @@ public class GoToUserSetupPage implements Command {
 	
 	private static GoToUserSetupPage instance = new GoToUserSetupPage();
 	private static final String USER_SETUP_PAGE = "/WEB-INF/jsp/UserSetup.jsp";
-	private static final String PART_PATH = "Controller?command=";
-	private static final String AUTHORIZATION_PAGE = "AUTHORIZATION_PAGE";
+	private static final String GO_TO_AUTHORIZATION_PAGE = "Controller?command=GO_TO_AUTHORIZATION_PAGE";
 	private static final String USER = "user";
 	
 	private GoToUserSetupPage() {
@@ -31,13 +30,13 @@ public class GoToUserSetupPage implements Command {
 		HttpSession session = request.getSession(false);
 		
 		if(session == null) {
-			response.sendRedirect(PART_PATH + AUTHORIZATION_PAGE);
+			response.sendRedirect(GO_TO_AUTHORIZATION_PAGE);
 			return;
 		}
 		User user = (User) session.getAttribute(USER);
 		
 		if(user == null) {
-			response.sendRedirect(PART_PATH + AUTHORIZATION_PAGE);
+			response.sendRedirect(GO_TO_AUTHORIZATION_PAGE);
 			return;
 		}
 		

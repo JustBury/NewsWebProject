@@ -10,5 +10,8 @@ public interface CommentServise {
 	String add(String comment, int idNews, int idUser) throws ServiseException;
 	
 	List<Comment> getComments(int idNews) throws ServiseException;
+	
+	String deleteComment(int idComment) throws ServiseException;
 
+	void deleteAllComments(int idNews) throws ServiseException;
 }

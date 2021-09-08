@@ -66,7 +66,7 @@
 					 <input	type="submit" class="button_profile" value="${profile}" /><br />
 				</form>
 				<form action="Controller" method="post">
-					 <input type="hidden" name="command" value="Logout" /> 
+					 <input type="hidden" name="command" value="LOGOUT_USER" /> 
 					 <input	type="submit" class="button_logout" value="${logout}" /><br />
 				</form>
 				</div >

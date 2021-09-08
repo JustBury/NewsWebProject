@@ -66,7 +66,7 @@
 					 <input	type="submit" class="button_profile" value="${profile}" /><br />
 				</form>
 				<form action="Controller" method="post">
-					 <input type="hidden" name="command" value="Logout" /> 
+					 <input type="hidden" name="command" value="LOGOUT_USER" /> 
 					 <input	type="submit" class="button_logout" value="${logout}" /><br />
 				</form>
 				</div >
@@ -107,18 +107,18 @@
   				<p><strong>${link_image}</strong><br>
 					<input class="input_creat_news" size="60" type="text" name="link_image" value='${requestScope["news"].getLinkImage()}' >
   				</p>
-				<input	type="submit" class="button_create_news" value="To publish" /><br />
+				<input	type="submit" class="button_create_news" value="PUBLISH NEWS" /><br />
 			</form>
 			<div></div>
 			<form action="Controller" method="post">
 				<input	type="hidden" name="command" value="DELETE_NEWS" />
 				<input type="hidden" name="newsId" value='${requestScope["news"].getNewsId()}' />
-				<input	type="submit" class="button_create_news" value="Delete News" /><br />
+				<input	type="submit" class="button_create_news" value="DELETE NEWS" /><br />
 			</form>
 			<form action="Controller" method="post">
-				<input	type="hidden" name="command" value="SEND_TO_СORRECT" />
+				<input	type="hidden" name="command" value="SEND_TO_CORRECT_NEWS" />
 				<input type="hidden" name="newsId" value='${requestScope["news"].getNewsId()}' />
-				<input	type="submit" class="button_create_news" value="Refine News" /><br />
+				<input	type="submit" class="button_create_news" value="SEND TO CORRECT NEWS" /><br />
 			</form>
 			</div>
 		</div>
@@ -126,6 +126,6 @@
 	<p class="text_end" style="font-size: 20px">
 		<c:out value="${created}" />
 	</p>  
-	</div>
+	
 </body>
 </html>

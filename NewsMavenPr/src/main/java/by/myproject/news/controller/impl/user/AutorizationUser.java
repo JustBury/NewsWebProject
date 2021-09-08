@@ -1,4 +1,4 @@
-package by.myproject.news.controller.impl;
+package by.myproject.news.controller.impl.user;
 
 import java.io.IOException;
 
@@ -19,9 +19,8 @@ public class AutorizationUser implements Command {
 	private static AutorizationUser instance = new AutorizationUser();
 	private static final ServiseProvider PROVIDER = ServiseProvider.getInstance();
 	private static final UserServise USER_SERVISE = PROVIDER.getUserServise();
-	public static final String PATH_COMMAND_AUT = "Controller?command=AUTHORIZATION_PAGE";
-	public static final String PATH_COMMAND_ERR = "Controller?command=UNKNOWN_COMMAND";
-	public static final String PATH_COMMAND_USER_PAGE = "Controller?command=GO_TO_USER_PAGE";
+	private static final String GO_TO_AUTHORIZATION_PAGE = "Controller?command=GO_TO_AUTHORIZATION_PAGE";
+	public static final String GO_TO_USER_PAGE = "Controller?command=GO_TO_USER_PAGE";
 	public static final String INCORRECT_DATA_MESSAGE = "&incorrect_data_message=Incorrect data was entered";
 	public static final String USER_NOT_FOUND_MESSAGE = "&user_not_found=There is no such user";
 	private static final String FAILED_SIGNIN = "Failed to sign in, please try again";
@@ -47,24 +46,23 @@ public class AutorizationUser implements Command {
 					
 		try {
 			if(!ValidationInformation.validationAuthorizationsInformation(info)) {
-				response.sendRedirect(PATH_COMMAND_AUT + INCORRECT_DATA_MESSAGE);
+				response.sendRedirect(GO_TO_AUTHORIZATION_PAGE + INCORRECT_DATA_MESSAGE);
 				return;
 			}	
 			
 			User user = USER_SERVISE.authorization(info);
 			
 			if (user == null) {
-				response.sendRedirect(PATH_COMMAND_AUT + USER_NOT_FOUND_MESSAGE);
+				response.sendRedirect(GO_TO_AUTHORIZATION_PAGE + USER_NOT_FOUND_MESSAGE);
 				return;
 			}
 
 				request.getSession(true).setAttribute(USER, user);
-				
-				response.sendRedirect(PATH_COMMAND_USER_PAGE);
+				response.sendRedirect(GO_TO_USER_PAGE);
 			
 		} catch (ServiseException e) {
 			e.printStackTrace();
-			response.sendRedirect(PATH_COMMAND_AUT + FAILED_SIGNIN);
+			response.sendRedirect(GO_TO_AUTHORIZATION_PAGE + FAILED_SIGNIN);
 			
 		}
 

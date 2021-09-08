@@ -68,7 +68,7 @@
 				<div class="button_place" >
 					<p class="text_user"><c:out value="${sessionScope['user'].getName()}" />&nbsp<c:out value="${sessionScope['user'].getSurname()}" /></p>
 				<form action="Controller" method="post">
-					 <input type="hidden" name="command" value="Logout" /> 
+					 <input type="hidden" name="command" value="LOGOUT_USER" /> 
 					 <input	type="submit" class="button_logout" value="${logout}" /><br />
 				</form>
 				</div >

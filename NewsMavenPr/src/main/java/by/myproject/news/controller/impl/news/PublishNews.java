@@ -1,4 +1,4 @@
-package by.myproject.news.controller.impl;
+package by.myproject.news.controller.impl.news;
 
 import java.io.IOException;
 
@@ -23,10 +23,11 @@ public class PublishNews implements Command {
 	private static final String CONTENT = "content";
 	private static final String BRIEF = "brief";
 	private static final String LINK_IMAGE = "link_image";
-	private static final String ADMIN_PAGE = "Controller?command=GO_TO_ADMIN_PAGE";
+	private static final String GO_TO_ADMIN_PAGE = "Controller?command=GO_TO_ADMIN_PAGE";
 	private static final String PART_PUBLISH_MESSEGE = "&message=";
-	private static final String AUTHORIZATION_PAGE = "Controller?command=AUTHORIZATION_PAGE";
 	private static final String USER = "user";
+	private static final String MESSAGE_FAIL = "Couldn't publish the news";
+	private static final String GO_TO_AUTHORIZATION_PAGE = "Controller?command=GO_TO_AUTHORIZATION_PAGE";
 	
 	private PublishNews() {
 	}
@@ -50,22 +51,24 @@ public class PublishNews implements Command {
 			HttpSession session = request.getSession(false);
 
 			if (session == null) {
-				response.sendRedirect(AUTHORIZATION_PAGE);
+				response.sendRedirect(GO_TO_AUTHORIZATION_PAGE);
 				return;
 			}
 
 			User user = (User) session.getAttribute(USER);
 
 			if (user == null) {
-				response.sendRedirect(AUTHORIZATION_PAGE);
+				response.sendRedirect(GO_TO_AUTHORIZATION_PAGE);
 				return;
 			}
 			
-			String messege = SERVISE.publish(news);
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher(ADMIN_PAGE + PART_PUBLISH_MESSEGE + messege);
+			String messegePublish = SERVISE.publish(news);
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher(GO_TO_ADMIN_PAGE + PART_PUBLISH_MESSEGE + messegePublish);
 			requestDispatcher.forward(request, response);
 		} catch (Exception e) {
-			e.printStackTrace();// TODO: handle exception
+			e.printStackTrace();
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher(GO_TO_ADMIN_PAGE + PART_PUBLISH_MESSEGE + MESSAGE_FAIL);
+			requestDispatcher.forward(request, response);
 		}
 		
 	}

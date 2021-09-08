@@ -48,11 +48,11 @@
 				</div>
 				<div class="button_place" >
 					<form action="Controller" method="post">
-						<input type="hidden" name="command" value="AUTHORIZATION_PAGE" />
+						<input type="hidden" name="command" value="GO_TO_AUTHORIZATION_PAGE" />
 						<input type="submit" class="button" value="${Login_button}" />
 					</form>
 				<form action="Controller" method="post">
-					<input type="hidden" name="command" value="REGISTRATION_PAGE" /> <input
+					<input type="hidden" name="command" value="GO_TO_REGISTRATION_PAGE" /> <input
 						type="submit" class="button" value="${Register_button}" />
 
 				</form>

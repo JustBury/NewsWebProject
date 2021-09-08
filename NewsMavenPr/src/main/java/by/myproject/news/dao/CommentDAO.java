@@ -10,5 +10,9 @@ public interface CommentDAO {
 	String add(String comment, int idNews, int idUser) throws DAOException;
 
 	List<Comment> getComments(int idNews) throws DAOException;
+	
+	String deleteComment(int idComment) throws DAOException;
+	
+	void deleteAllComments(int idNews) throws DAOException;
 
 }

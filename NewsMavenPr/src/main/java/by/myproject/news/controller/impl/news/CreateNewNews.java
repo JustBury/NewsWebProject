@@ -1,4 +1,4 @@
-package by.myproject.news.controller.impl;
+package by.myproject.news.controller.impl.news;
 
 import java.io.IOException;
 
@@ -19,10 +19,9 @@ public class CreateNewNews implements Command{
 	private static final CreateNewNews inctense = new CreateNewNews();
 	private static final ServiseProvider PROVIDER = ServiseProvider.getInstance();
 	private static final NewsServise NEWS_SERVISE = PROVIDER.getNewsServise();
-	private static final String PART_PATH = "Controller?command=";
-	private static final String AUTHORIZATION_PAGE = "AUTHORIZATION_PAGE";
-	private static final String USER_PAGE = "GO_TO_USER_PAGE";
-	private static final String ERROR_PAGE = "UNKNOWN_COMMAND";
+	private static final String GO_TO_AUTHORIZATION_PAGE = "Controller?command=GO_TO_AUTHORIZATION_PAGE";
+	private static final String GO_TO_USER_PAGE = "Controller?command=GO_TO_USER_PAGE";
+	private static final String ERROR_PAGE = "Controller?command=UNKNOWN_COMMAND";
 	private static final String USER = "user";
 	private static final String STATUS_PUB = "Published";
 	private static final String TITLE = "title";
@@ -42,14 +41,14 @@ public class CreateNewNews implements Command{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		if(session == null) {
-			response.sendRedirect(PART_PATH + AUTHORIZATION_PAGE);
+			response.sendRedirect(GO_TO_AUTHORIZATION_PAGE);
 			return;
 		}
 		
 		User user = (User) session.getAttribute(USER);
 		
 		if(user == null) {
-			response.sendRedirect(PART_PATH + AUTHORIZATION_PAGE);
+			response.sendRedirect(GO_TO_AUTHORIZATION_PAGE);
 			return;
 		}
 		
@@ -66,12 +65,11 @@ public class CreateNewNews implements Command{
 		news.setAuthor(user);	
 		try {
 			NEWS_SERVISE.addNews(news);		
-			response.sendRedirect(PART_PATH + USER_PAGE);
+			response.sendRedirect(GO_TO_USER_PAGE);
 		} catch (ServiseException e) {
 			//log
-			System.out.println(e.getMessage());
 			e.printStackTrace();
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher(PART_PATH + ERROR_PAGE);
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher(ERROR_PAGE);
 			requestDispatcher.forward(request, response);
 		}
 	}

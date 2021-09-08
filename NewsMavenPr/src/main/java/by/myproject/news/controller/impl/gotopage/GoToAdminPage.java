@@ -1,4 +1,4 @@
-package by.myproject.news.controller.impl;
+package by.myproject.news.controller.impl.gotopage;
 
 import java.io.IOException;
 
@@ -22,10 +22,12 @@ public class GoToAdminPage implements Command {
 	private static final String ERROR_PAGE = "Controller?command=UNKNOWN_COMMAND";
 	private static final String NEWSES = "newses";
 	private static final String USER = "user";
-	private static final String AUTHORIZATION_PAGE = "Controller?command=AUTHORIZATION_PAGE";
 	private static final String STATUS_VER = "Verification";
 	private static final String STATUS_PUB = "Published";
-	private static final String STATUS_COR = "Correct";
+	private static final String STATUS_REV = "Revision";
+	
+	private static final String GO_TO_AUTHORIZATION_PAGE = "Controller?command=GO_TO_AUTHORIZATION_PAGE";
+	private static final String MESSEGE_PLEASE_LOGIN = "&please_login=Please log in to view the content";
 
 	private GoToAdminPage() {
 	}
@@ -40,13 +42,13 @@ public class GoToAdminPage implements Command {
 
 
 		if (session == null) {
-			response.sendRedirect(AUTHORIZATION_PAGE);
+			response.sendRedirect(GO_TO_AUTHORIZATION_PAGE + MESSEGE_PLEASE_LOGIN);
 			return;
 		}
 
 		User user = (User) session.getAttribute(USER);
 		if (user == null) {
-			response.sendRedirect(AUTHORIZATION_PAGE);
+			response.sendRedirect(GO_TO_AUTHORIZATION_PAGE + MESSEGE_PLEASE_LOGIN);
 			return;
 		}
 
@@ -54,7 +56,7 @@ public class GoToAdminPage implements Command {
 			String[] stutusMass = new String[3];
 			stutusMass[0] = STATUS_PUB;
 			stutusMass[1] = STATUS_VER;
-			stutusMass[2] = STATUS_COR;
+			stutusMass[2] = STATUS_REV;
 			request.setAttribute(NEWSES, NEWS_SERVISE.getNewses(stutusMass));
 		} catch (ServiseException e) {
 			System.out.println(e.getMessage());

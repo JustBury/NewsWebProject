@@ -1,4 +1,4 @@
-package by.myproject.news.controller.impl;
+package by.myproject.news.controller.impl.user;
 
 import java.io.IOException;
 
@@ -12,8 +12,7 @@ import jakarta.servlet.http.HttpSession;
 public class Logout implements Command{
 	
 	private static final Logout instance = new Logout();
-	private static final String PART_PATH = "Controller?command=";
-	private static final String AUTHORIZATION_PAGE = "AUTHORIZATION_PAGE";
+	private static final String GO_TO_AUTHORIZATION_PAGE = "Controller?command=GO_TO_AUTHORIZATION_PAGE";
 	private static final String USER = "user";
 	
 	
@@ -29,12 +28,12 @@ public class Logout implements Command{
 		HttpSession session = request.getSession(false);
 		
 		if(session == null) {
-			response.sendRedirect(PART_PATH + AUTHORIZATION_PAGE);
+			response.sendRedirect(GO_TO_AUTHORIZATION_PAGE);
 			return;
 		}
 		session.removeAttribute(USER);
 					
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher(PART_PATH + AUTHORIZATION_PAGE);
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher(GO_TO_AUTHORIZATION_PAGE);
 		requestDispatcher.forward(request, response);
 		
 	}

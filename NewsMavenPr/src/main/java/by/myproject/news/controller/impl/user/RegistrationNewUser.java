@@ -1,4 +1,4 @@
-package by.myproject.news.controller.impl;
+package by.myproject.news.controller.impl.user;
 
 import java.io.IOException;
 import by.myproject.news.bean.RegistrationInfo;
@@ -18,8 +18,8 @@ public class RegistrationNewUser implements Command {
 	private static final RegistrationNewUser instance = new RegistrationNewUser();
 	private static final ServiseProvider PROVIDER = ServiseProvider.getInstance();
 	private static final UserServise USER_SERVISE = PROVIDER.getUserServise();
-	private static final String PATH_COMMAND_REG = "Controller?command=REGISTRATION_PAGE";
-	private static final String PATH_COMMAND_AUT = "Controller?command=AUTHORIZATION_PAGE";
+	private static final String GO_TO_REGISTRATION_PAGE = "Controller?command=GO_TO_REGISTRATION_PAGE";
+	private static final String GO_TO_AUTHORIZATION_PAGE = "Controller?command=GO_TO_AUTHORIZATION_PAGE";
 	private static final String INCORRECT_DATA = "&incorrect_data_message=Incorrect data was entered:";
 	private static final String FAILED_REGISTER = "Failed to register the user, please try again";
 	private static final String EMAIL_IS_BUSY = "&email_is_busy=The user with this Email is already registered";
@@ -49,21 +49,21 @@ public class RegistrationNewUser implements Command {
 				
 		try {
 			if(!ValidationInformation.validationRegistrationInformation(info)) {
-				response.sendRedirect(PATH_COMMAND_REG + INCORRECT_DATA);
+				response.sendRedirect(GO_TO_REGISTRATION_PAGE + INCORRECT_DATA);
 				return;
 			}
 								
 			User user = USER_SERVISE.registration(info);
 			
 			if(user == null) {
-				response.sendRedirect(PATH_COMMAND_REG + EMAIL_IS_BUSY);
+				response.sendRedirect(GO_TO_REGISTRATION_PAGE + EMAIL_IS_BUSY);
 				return;
 			}
 			
-			response.sendRedirect(PATH_COMMAND_AUT + REGISTRATION_MESSAGE);
+			response.sendRedirect(GO_TO_AUTHORIZATION_PAGE + REGISTRATION_MESSAGE);
 		} catch (ServiseException e) {
 			e.printStackTrace();
-			response.sendRedirect(PATH_COMMAND_REG + FAILED_REGISTER);		
+			response.sendRedirect(GO_TO_REGISTRATION_PAGE + FAILED_REGISTER);		
 		}
 		
 	}

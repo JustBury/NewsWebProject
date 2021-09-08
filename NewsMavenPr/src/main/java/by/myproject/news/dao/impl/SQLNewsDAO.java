@@ -50,7 +50,7 @@ public class SQLNewsDAO implements NewsDAO {
 	private static final String DELETE_NEWS = "DELETE FROM news WHERE id_News = ?";
 	private static final String PUBLISH_NEWS = "UPDATE news_site.news SET Status_News = 'Published' WHERE id_News = ?";
 	private static final String UPDATE_NEWS = "UPDATE news_site.news SET title = ?, brief = ?, content = ?, date_publication = ?, link_image = ? WHERE id_News = ?";
-	private static final String REFINE_NEWS = "UPDATE news_site.news SET Status_News = 'Refine' WHERE id_News = ?";
+	private static final String REVISION_NEWS = "UPDATE news_site.news SET Status_News = 'Revision' WHERE id_News = ?";
 	private static final String PUBLISH_MESSEGE = "The news was successfully published";
 	private static final String UPDATE_MESSEGE = "The news was successfully updated";
 	private static final String DELETE_MESSEGE = "The news was successfully deleted";
@@ -176,7 +176,7 @@ public class SQLNewsDAO implements NewsDAO {
 	public String sendToCorrect(int newsId) throws DAOException {
 
 		try (Connection con = connectionPool.takeConnection();
-				PreparedStatement ps = con.prepareStatement(REFINE_NEWS);) {
+				PreparedStatement ps = con.prepareStatement(REVISION_NEWS);) {
 
 			ps.setInt(1, newsId);
 			ps.executeUpdate();
