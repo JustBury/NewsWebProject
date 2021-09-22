@@ -8,23 +8,15 @@ import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import by.myproject.news.bean.Comment;
 import by.myproject.news.bean.News;
 import by.myproject.news.bean.User;
 import by.myproject.news.dao.NewsDAO;
 import by.myproject.news.dao.connection.ConnectionPool;
 import by.myproject.news.dao.connection.ConnectionPoolException;
 import by.myproject.news.dao.exception.DAOException;
-import by.myproject.news.dao.exception.DAOExsepsionClose;
 
 public class SQLNewsDAO implements NewsDAO {
 
@@ -115,6 +107,7 @@ public class SQLNewsDAO implements NewsDAO {
 					}
 				}
 			}
+			log.error("Hello");
 			return newses;
 		} catch (SQLException e) {
 			log.error(e);

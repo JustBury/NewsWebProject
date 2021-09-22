@@ -19,7 +19,6 @@ public class CommandFilter implements Filter {
 
 	private static final String LAST_COMMAND_SESSSION_PARAM = "lastCommand";
 	
-
 	private ServletContext context;
 
 	public void init(FilterConfig fConfig) throws ServletException {

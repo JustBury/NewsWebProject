@@ -76,7 +76,6 @@ public class CommandProvider {
 
 	public Command findCommand(String name) {
 		if (name == null) {
-			System.out.println(name);
 			name = CommandName.UNKNOWN_COMMAND.toString();
 		}
 		CommandName commandName;

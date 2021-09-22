@@ -1,10 +1,7 @@
 package by.myproject.news.servise.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
+import java.util.List;
 import by.myproject.news.bean.RegistrationInfo;
 import by.myproject.news.bean.User;
 import by.myproject.news.dao.DAOProvider;

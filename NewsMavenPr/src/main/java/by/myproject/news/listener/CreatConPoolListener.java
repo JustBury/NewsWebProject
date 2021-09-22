@@ -15,10 +15,10 @@ public class CreatConPoolListener implements ServletContextListener {
 
 	public CreatConPoolListener() {
 		try {
-			
 			cp.initPoolData();
 		} catch (ConnectionPoolException e) {
 			log.error(e);
 		}
+		
 	}
 }

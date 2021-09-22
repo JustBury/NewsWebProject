@@ -59,8 +59,5 @@ public class DeleteUser implements Command {
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher(ERROR_PAGE);
 			requestDispatcher.forward(request, response);
 		}
-		
-		
 	}
-
 }

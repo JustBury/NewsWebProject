@@ -24,7 +24,6 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Executor;
 
-import by.myproject.news.dao.exception.DAOExsepsionClose;
 
 public final class ConnectionPool {
 
@@ -104,86 +103,86 @@ public final class ConnectionPool {
 		return connection;
 	}
 
-	public void closeConnection(Connection con, PreparedStatement ps, ResultSet rs) throws DAOExsepsionClose {
+	public void closeConnection(Connection con, PreparedStatement ps, ResultSet rs) throws ConnectionPoolException {
 		try {
 			if (rs != null) {
 				rs.close();
 			}
 		} catch (SQLException e) {
-			throw new DAOExsepsionClose(e);// TODO: handle exception
+			throw new ConnectionPoolException("SQLException in ConnectionPool, ñouldn't close ResultSet",e);// TODO: handle exception
 		}
 		try {
 			if (ps != null) {
 				ps.close();
 			}
 		} catch (SQLException e) {
-			throw new DAOExsepsionClose(e);// TODO: handle exception
+			throw new ConnectionPoolException("SQLException in ConnectionPool, ñouldn't close PreparedStatement",e);// TODO: handle exception
 		}
 		try {
 			if (con != null) {
 				con.close();
 			}
 		} catch (SQLException e) {
-			throw new DAOExsepsionClose(e);// TODO: handle exception
+			throw new ConnectionPoolException("SQLException in ConnectionPool, ñouldn't close Connection",e);// TODO: handle exception
 		}
 	}
 
-	public void closeConnection(Connection con, Statement st, ResultSet rs) throws DAOExsepsionClose {
+	public void closeConnection(Connection con, Statement st, ResultSet rs) throws ConnectionPoolException {
 		try {
 			if (rs != null) {
 				rs.close();
 			}
 		} catch (SQLException e) {
-			throw new DAOExsepsionClose(e);// TODO: handle exception
+			throw new ConnectionPoolException("SQLException in ConnectionPool, ñouldn't close ResultSet",e);// TODO: handle exception
 		}
 		try {
 			if (st != null) {
 				st.close();
 			}
 		} catch (SQLException e) {
-			throw new DAOExsepsionClose(e);// TODO: handle exception
+			throw new ConnectionPoolException("SQLException in ConnectionPool, ñouldn't close Statement",e);// TODO: handle exception
 		}
 		try {
 			if (con != null) {
 				con.close();
 			}
 		} catch (SQLException e) {
-			throw new DAOExsepsionClose(e);// TODO: handle exception
+			throw new ConnectionPoolException("SQLException in ConnectionPool, ñouldn't close Connection",e);// TODO: handle exception
 		}
 	}
 
-	public void closeConnection(Connection con, Statement st) throws DAOExsepsionClose {
+	public void closeConnection(Connection con, Statement st) throws ConnectionPoolException {
 		try {
 			if (st != null) {
 				st.close();
 			}
 		} catch (SQLException e) {
-			throw new DAOExsepsionClose(e);// TODO: handle exception
+			throw new ConnectionPoolException("SQLException in ConnectionPool, ñouldn't close Statement",e);// TODO: handle exception
 		}
 		try {
 			if (con != null) {
 				con.close();
 			}
 		} catch (SQLException e) {
-			throw new DAOExsepsionClose(e);// TODO: handle exception
+			throw new ConnectionPoolException("SQLException in ConnectionPool, ñouldn't close Connection",e);
 		}
 	}
 
-	public void closeConnection(Connection con, PreparedStatement ps) throws DAOExsepsionClose {
+	public void closeConnection(Connection con, PreparedStatement ps) throws ConnectionPoolException {
 
 		try {
 			if (ps != null) {
 				ps.close();
 			}
 		} catch (SQLException e) {
-			throw new DAOExsepsionClose(e);// TODO: handle exception
+			throw new ConnectionPoolException("SQLException in ConnectionPool, ñouldn't close PreparedStatement",e);
 		}
 		try {
 			if (con != null) {
 				con.close();
 			}
 		} catch (SQLException e) {
-			throw new DAOExsepsionClose(e);// TODO: handle exception
+			throw new ConnectionPoolException("SQLException in ConnectionPool, ñouldn't close Connection",e);
 		}
 	}
 

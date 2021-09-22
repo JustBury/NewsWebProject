@@ -56,7 +56,6 @@ public class SQLUserDAOTest {
 		} catch (DAOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 }

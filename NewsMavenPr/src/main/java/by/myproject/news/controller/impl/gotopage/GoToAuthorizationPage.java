@@ -24,7 +24,6 @@ public class GoToAuthorizationPage implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher(AUTHORIZATION_PAGE);
-		requestDispatcher.include(request, response);
 		requestDispatcher.forward(request, response);
 		
 	}
